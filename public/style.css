@@ -7,12 +7,18 @@
     #container2 { width: 90%; }
 }*/
 
+/*
+  iFrame wird ab 961px angezeigt
+*/
 @media screen and (max-width: 960px) {
   #iframe_scene {
     display: none;
   }
 }
 
+/*
+  Link liste wird bis 960px angezeigt, danach nicht mehr
+*/
 @media screen and (min-width: 961px) {
   #car_list {
     display: none;
