@@ -95,16 +95,35 @@ async function getData() {
   }
 }
 
+/* 
+ ========================
+ ========================
+  Melike, hier wird eine Anfrage an den Endpoint '/links' gemacht,
+  anschließend wird für jeden Link ein neues <li> Element mit einem <a> Element erstellt und das wird dem <ul> Element angehangen
+ ========================
+ ========================
+*/
 async function getLinks() {
   try {
+    // Anfrage an den Endpoint
     const response = await fetch("/links", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: { "Content-Type": "application/json" }
     });
+
     console.log('Got links: ');
+
+    // Antwort, also die Links von dem Endpoint
     const linksJSON = await response.json();
+
+    // <ul> Element, dem die ganzen <li> angefügt werden
     const ul = $('#car_list');
 
+    // für jeden Link wird dem <ul> Element ein <li> Element mit der Bootstrap-Klasse 'list-group-item' angefügt
+    // die <li> Elemente besitzen ein Attribut 'target="_blank", dadurch wird der Link in einem neuen Tab geöffnet und href für die Linkadresse
+    // Anschließend wird die Ausgabe, was man sieht, so formatiert: Marke: Model
+    // Das ganze habe ich mit diesen `` <-- Klammern benutzt, damit ich Javascript variablen direkt in den String einsetzten kann mit ${VARIABLE}
+    // anstatt wie bei dem error unten, der error unten würde z.B. so aussehen `console.log(${err.name}: ${err.message})`, dann brauchst du nicht + benutzten
     linksJSON.forEach(row => {
       ul.append(`<li class="list-group-item"><a target="_blank" href="${row.link}">${row.carbrand}: ${row.model}</a></li>`)
     });

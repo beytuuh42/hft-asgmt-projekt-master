@@ -79,6 +79,13 @@ app.get('/carbrands', (req, res) => {
   });
 });
 
+/* 
+ ========================
+ ========================
+  Melike, hier wird ein neuer Endpoint erstellt, der auf '/links reagiert, d.h. wenn du eine Abfrage auf localhost:3000/links machst, wird das hier ausgeführt
+ ========================
+ ========================
+*/
 app.get('/links', (req, res) => {
   db.all("SELECT link, carbrand, model FROM links ORDER BY carbrand, model;", (err, rows) => {
     if (err) {
