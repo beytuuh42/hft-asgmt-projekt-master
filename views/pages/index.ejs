@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <% include ../partials/head %>
+    </head>
+
+  <body>
+    <%- include('../partials/nav', { active: 'index' }) %>
+    <div style="text-align:center;" class="container">
+      
+      <!-- Car-Scene (loading screen and iframe) -->
+      <h3>
+        <div id="info_controls" class="info d-none"></div>
+      </h3>
+      
+      <div class="row justify-content-center">
+          <iframe style="margin: 25px 0px 25px 0px;" id="iframe_scene" class="iframe_scene d-none" src="" width="100%" height="500px" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+          <ul id="car_list" class="form-group">
+          </ul>
+      </div>
+
+      <br>
+      
+      <!-- header -->
+      <div id="myHeading" class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6">
+            <h1 class="page-title display-5">Finde dein Ersatzteil</h1>
+        </div>
+      </div>
+
+      <!-- form to choose carbrand and model -->
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6">
+          <form id="form_search" method="post" action="/suche">
+            <div class="form-group">
+              <label for="select_carbrand">Automarke</label>
+              <select id="select_carbrand" class="form-control"></select>
+           </div>
+            <div class="form-group">
+              <label for="select_model">Model</label>
+              <select id="select_model" class="form-control">
+              </select> </div>
+            <button id="button_search" type="submit" class="btn btn-primary">Suche Starten</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

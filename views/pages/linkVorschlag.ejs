@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <% include ../partials/head %>
+    </head>
+
+  <body>
+    <%- include('../partials/nav', { active: 'index' }) %>
+    <div class="container">
+      
+      <br>
+      
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6">
+            <h1 class="page-title display-5">Link vorschlagen</h1>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-xs-12 col-sm-6">
+          <form id="form_suggest" method="post" action="/suggest">
+            <div class="form-group">
+              <label for="select_carbrand">Automarke</label>
+              <select id="select_carbrand" class="form-control">
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="select_model">Model</label>
+              <select id="select_model" class="form-control">
+              </select> 
+            </div>
+            <div class="form-group">
+              <label for="select_category">Kategory</label>
+              <select id="select_category" class="form-control">
+              </select> 
+            </div>
+            <div class="form-group">
+              <label for="link_suggestion">Shop-Link</label>
+              <textarea class="form-control" name="link" id="link_suggestion" placeholder="Hier Link einfügen" rows="1"></textarea>
+            </div>
+            <button id="button_suggest" type="submit" class="btn btn-primary">Link einreichen</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
+</html>

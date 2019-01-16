@@ -1,0 +1,20 @@
+.page-title-title {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/*@media only screen and (max-width: 479px){
+    #container2 { width: 90%; }
+}*/
+
+@media screen and (max-width: 960px) {
+  #iframe_scene {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  #car_list {
+    display: none;
+  }
+}

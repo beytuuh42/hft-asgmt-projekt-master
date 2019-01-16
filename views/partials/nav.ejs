@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">Ersatzteilfinder</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#hft-shoutbox-navbar" aria-controls="hft-shoutbox-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="hft-shoutbox-navbar">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item <%= active === 'index' ? 'active' : undefined  %>">
+        <a class="nav-link" href="/linkVorschlag">Link vorschlagen<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item <%= active === 'index' ? 'active' : undefined  %>">
+        <a class="nav-link" href="/impressum">Impressum<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item <%= active === 'index' ? 'active' : undefined  %>">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <form id="form_login" method="post" action="/suche">
+          
+          <input type="text" name="loginname" id="loginname" class="input-text" placeholder="Benutzername">
+          <input type="password" name="login[password]" id="password" class="input-text" placeholder="Passwort">
+          <button type="submit" id= "loginbutten" class="button btn-login">Login</button>
+          </form>
+       </div>
+      </li>
+    </ul>
+  </div>
+</nav>
