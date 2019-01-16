@@ -87,7 +87,7 @@ app.get('/carbrands', (req, res) => {
  ========================
 */
 app.get('/links', (req, res) => {
-  db.all("SELECT link, carbrand, model FROM links ORDER BY carbrand, model;", (err, rows) => {
+  db.all("SELECT * FROM links ORDER BY carbrand, model;", (err, rows) => {
     if (err) {
       console.log("Couldn't select links from database!");
     }
